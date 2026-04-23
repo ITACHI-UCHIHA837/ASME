@@ -1,0 +1,33 @@
+name:  deploy
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches:
+      - main
+  
+jobs:
+    build-deply:
+          runs-on: ubantuc latest
+          steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v4
+
+            - name: Use Node.js 24
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '24'
+
+            - name: 🔨 Build Project
+              run: npm install
+
+            - name: 📂 Deploy to Server
+              run: npm run build
+
+            - name: Server
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: dist
+              
