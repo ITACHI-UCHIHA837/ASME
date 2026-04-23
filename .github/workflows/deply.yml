@@ -1,33 +1,65 @@
-name:  deploy
+# name:  deploy
 
-# Controls when the action will run.
+# # Controls when the action will run.
+# on:
+#   push:
+#     branches:
+#       - main
+  
+# jobs:
+#     build-deply:
+#           runs-on: ubantuc latest
+#           steps:
+#             - name: 🚚 Get latest code
+#               uses: actions/checkout@v4
+
+#             - name: Use Node.js 24
+#               uses: actions/setup-node@v4
+#               with:
+#                   node-version: '24'
+
+#             - name: 🔨 Build Project
+#               run: npm install
+
+#             - name: 📂 Deploy to Server
+#               run: npm run build
+
+#             - name: Server
+#               uses: peaceiris/actions-gh-pages@v4
+#               with:
+#                 github_token: ${{ secrets.GITHUB_TOKEN }}
+#                 publish_dir: dist
+              
+name: Deploy Vite App to GitHub Pages
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches:
       - main
-  
+
+permissions:
+  contents: write
+
 jobs:
-    build-deply:
-          runs-on: ubantuc latest
-          steps:
-            - name: 🚚 Get latest code
-              uses: actions/checkout@v4
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-            - name: Use Node.js 24
-              uses: actions/setup-node@v4
-              with:
-                  node-version: '24'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-            - name: 🔨 Build Project
-              run: npm install
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-            - name: 📂 Deploy to Server
-              run: npm run build
+      - name: Install dependencies
+        run: npm install
 
-            - name: Server
-              uses: peaceiris/actions-gh-pages@v4
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                publish_dir: dist
-              
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

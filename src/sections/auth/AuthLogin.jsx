@@ -41,7 +41,7 @@ export default function AuthLoginForm({ className, link }) {
     //const onSubmit = async (data) => {
       try {
         console.log("trying");
-        const res = await fetch("http://localhost:8000/api/calculations/login", {
+        const res = await fetch(import.meta.env.VITE_API_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
