@@ -81,9 +81,10 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    //  base: API_URL,
+     base: API_URL,
     //  base: "/",
-     base: "/ASME/",
+      // base: "/ASME",
+     
     plugins: [react(), jsconfigPaths()],
   };
 });

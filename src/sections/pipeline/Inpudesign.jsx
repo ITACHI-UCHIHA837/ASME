@@ -140,7 +140,7 @@ export default function Inpudesign({pipeinput ,onChange}) {
             justifyContent: 'space-between',
             alignItems: 'center',
             background: '#fdf0f0',
-            background: '#f0fdf4',
+         //   background: '#f0fdf4',
             border: '0.5px solid #86efac',
             borderRadius: '8px',
             padding: '8px 14px',
