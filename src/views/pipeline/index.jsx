@@ -37,7 +37,7 @@ const mongocommit = async()=>{
       };
   
       try {
-          const ews = await fetch(" http://localhost:8000/api/calculations/store",{
+          const ews = await fetch(`${import.meta.env.VITE_API_URL}/store`,{
             method:"POST",
             headers:{
               "Content-Type": "application/json",

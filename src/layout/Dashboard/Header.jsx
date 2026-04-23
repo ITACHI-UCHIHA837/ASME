@@ -85,7 +85,7 @@ const [user, setUser] = useState("");
       
       const token = sessionStorage.getItem("token");
       try {
-        const iid= await fetch("http://localhost:8000/api/calculations/profile",{
+        const iid= await fetch(`${import.meta.env.VITE_API_URL}/profile`,{
           headers:{
             aut: `Bearer ${token}`,
             msg: "in the aheader req"

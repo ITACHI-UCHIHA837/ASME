@@ -41,7 +41,7 @@ export default function AuthLoginForm({ className, link }) {
     //const onSubmit = async (data) => {
       try {
         console.log("trying");
-        const res = await fetch(import.meta.env.VITE_API_URL, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

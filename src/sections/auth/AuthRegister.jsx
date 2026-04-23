@@ -42,7 +42,7 @@ export default function AuthRegisterForm({ className, link }) {
   const onSubmit = async(data) => {
  try {
         console.log("trying");
-        const res = await fetch("http://localhost:8000/register", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/register`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

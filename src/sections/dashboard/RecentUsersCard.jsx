@@ -102,7 +102,7 @@ export default function RecentUsersCard(recent) {
   if (!confirmDelete) return;
   try {
     console.log("trying");
-  const res=  await fetch(`http://localhost:8000/api/calculations/${id}`,
+  const res=  await fetch(`${import.meta.env.VITE_API_URL}/${id}`,
       {
         method:'delete',
       headers:{

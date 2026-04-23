@@ -133,7 +133,7 @@ useEffect(() => {
     const token = sessionStorage.getItem("token")
     if (!token) return;
     try {
-      const ews = await fetch("http://localhost:8000/api/calculations/stats",
+      const ews = await fetch(`${import.meta.env.VITE_API_URL}/stats`,
         //method: "GET"
         {headers:{
            aut: `Bearer ${token}`}}
