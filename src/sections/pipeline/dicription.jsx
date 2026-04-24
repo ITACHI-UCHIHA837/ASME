@@ -75,7 +75,7 @@ export default function Dicription({pipeinput,onChangehandel}) {
         </div>
             <Userinput
             label="Project name"
-            placeholder='Untital'
+            placeholder='Untitled'
             type='text'
             value={pipeinput.projname}
             onChange={(val) => onChangehandel('projname', val)}

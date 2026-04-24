@@ -122,7 +122,7 @@ export default function AuthLoginForm({ className, link }) {
         </Stack>
         <div className="text-center mt-4">
           <Button type="submit" className="shadow px-sm-4">
-            Loginnn
+            Login
           </Button>
         </div>
         <Stack direction="horizontal" className="justify-content-between align-items-end mt-4">

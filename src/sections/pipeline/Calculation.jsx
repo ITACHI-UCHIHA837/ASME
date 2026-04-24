@@ -80,7 +80,7 @@ export default function Dicription({pipeinput,result,commit,datacommit,mongocomm
          
         </Stack>
          <Stack direction="horizontal" gap={3} style={{ fontSize: '13px', fontWeight: 600 , color:"black",display:'flex',alignItems:'center',justifyContent:'center', marginBottom:'10px' }}>
-           {pipeinput.size.value/pipeinput.wall_thik_consider>pipeinput.dia_to_wall?<><Badge style={{fontSize: '13px', fontWeight: 600 }} bg="light-success">PASS</Badge></>:<><Badge  style={{fontSize: '13px', fontWeight: 600 }} bg="light-danger">FAIL</Badge></>}
+           {pipeinput.size.value/pipeinput.wall_thik_consider>pipeinput.dia_to_wall?<><Badge className='px-5' style={{fontSize: '13px', fontWeight: 600 ,padding:'12px' }} bg="light-success">PASS</Badge></>:<><Badge className='px-5' style={{fontSize: '13px', fontWeight: 600 }} bg="light-danger">FAIL</Badge></>}
            </Stack>
          <Stack direction="horizontal" gap={3} style={{ fontSize: '13px', fontWeight: 600 , color:"black",display:'flex',alignItems:'center',justifyContent:'center'  }}>
            {/* <Button onClick={commit } variant="dark" className="btn-shadow" >commit</Button>

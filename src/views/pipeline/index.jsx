@@ -30,7 +30,7 @@ const mongocommit = async()=>{
         size: pipeinput.size.value,
           D_T_allo:pipeinput.dia_to_wall,
             wall_consi:pipeinput.wall_thik_consider,
-            projname:pipeinput.projname || "untital"
+            projname:pipeinput.projname || "untitled"
         // class_id: pipeinput.class,
         // CA: pipeinput.CA,
         // menufecture:pipeinput.menufecture,
