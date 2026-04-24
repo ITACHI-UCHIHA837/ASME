@@ -43,7 +43,7 @@ export default function AuthRegisterForm({ className, link }) {
  try {
         console.log("trying");
         // const res = await fetch(`${import.meta.env.VITE_API_URL}/register`, {
-        const res = await fetch(`http://localhost:8000/api/calculations/ragister`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/ragister`, {
           method: "POST",       
           headers: {
             "Content-Type": "application/json"
@@ -110,7 +110,7 @@ export default function AuthRegisterForm({ className, link }) {
                 type="text"
                 placeholder="Last Name"
                 {...register('lastName', lastNameSchema)}
-                isInvalid={!!errors.email}
+                isInvalid={!!errors.lastName}
                 className={className && 'bg-transparent border-white text-white border-opacity-25 '}
               />
               <Form.Control.Feedback type="invalid">{errors.lastName?.message}</Form.Control.Feedback>
@@ -163,7 +163,7 @@ export default function AuthRegisterForm({ className, link }) {
           </Form.Group>
         </Stack>
         <div className="text-center mt-4">
-          <Button type="submit" className="shadow px-sm-4">
+          <Button type="submit" className="shadow px-sm-4" >
             Sign up
           </Button>
         </div>

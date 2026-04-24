@@ -76,7 +76,7 @@ export default function Header() {
   const drawerOpen = menuMaster?.isDashboardDrawerOpened;
 const logouthandel =()=>{
  sessionStorage.removeItem("token"); // remove token
-    window.location.href = '/';
+    window.location.href = '/ASME/';
 }
 
 const [user, setUser] = useState("");
