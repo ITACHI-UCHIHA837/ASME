@@ -42,12 +42,15 @@ export default function AuthRegisterForm({ className, link }) {
   const onSubmit = async(data) => {
  try {
         console.log("trying");
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/register`, {
-          method: "POST",
+        // const res = await fetch(`${import.meta.env.VITE_API_URL}/register`, {
+        const res = await fetch(`http://localhost:8000/api/calculations/ragister`, {
+          method: "POST",       
           headers: {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
+            firstName: data.firstName,
+            lastName: data.lastName,
             email: data.email,
             password: data.password
           })
@@ -57,7 +60,10 @@ export default function AuthRegisterForm({ className, link }) {
       alert(result.message);
       return;
     }
-    alert("Login success");
+     sessionStorage.setItem("token", result.token);
+
+    alert("register success");
+     window.location.href = "/#/";
     reset();
   } catch (error) {
     console.error(error);
